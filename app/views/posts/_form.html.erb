@@ -1,0 +1,16 @@
+<%= form_for @post, html: { multipart: true } do |f| %>
+
+    <%= render "shared/error_messages" %>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, {prompt: "Choose a category" }) %><br>
+    <%= f.label :title %><br>
+    <%= f.text_field :title, placeholder: "Type the post title here" %><br>
+    <%= f.label :author %><br>
+    <%= f.text_field :author, placeholder: "Type the post author here" %><br>
+    <%= f.label :content %><br>
+    <%= f.text_area :content, class: 'quill_container', placeholder: "Type the post text here" %><br>
+    <%= f.label :image %><br>
+    <%= f.file_field :image %><br>
+
+    <%= f.submit %>
+
+<% end %>

@@ -1,0 +1,31 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+
+<%= render 'shared/nav' %>
+
+
+<div class="container h-100">
+
+  <div class="row h-100 justify-content-center align-items-center">
+    <% @posts.each do |post| %>
+    <!-- Post Content Column -->
+    <!-- Preview Image -->
+    <%= image_tag post.image_url.to_s, alt: "Image", class: "img-fluid" %>
+    <div class="col-lg-10">
+
+      <!-- Title -->
+      <h1 class="mt-4 headline"><%= link_to post.title, post %></h1>
+
+      <!-- Author/Date/Time -->
+      <p class="authdate">by <%= post.author %><br>
+        Posted on <%= post.created_at.strftime("%B %d, %Y") %></p>
+
+      <hr>
+
+      <!-- Post Content -->
+      <div class="content"><%= post.content.first(1000).gsub("<p><br></p>","").html_safe + "..."%></div>
+      <hr>
+    </div>
+    <% end %>
+  </div>
