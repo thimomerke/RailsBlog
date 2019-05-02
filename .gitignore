@@ -29,3 +29,14 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+public/.well-known/acme-challenge/sslforfree_test_5c9bf930315459.42339851
+public/.well-known/acme-challenge/gx2-c-XUIT8S86e08W4hIKYjMWH-jAv9GDhjvZlQdxU
+public/.well-known/acme-challenge/gi9_Szb-eyaiCVgv81HtCimlTFxkaZy2WWFeK-Hihjs
+public/uploads/post/image/1/706930397.jpg
+public/uploads/post/image/2/IMG_1316.jpg
+public/uploads/tmp/1553785300-19068-0001-0000/706930397.jpg
+public/uploads/tmp/1553785359-19068-0002-9274/706930397.jpg
+public/uploads/tmp/1553785371-19374-0001-0550/706930397.jpg
+db/migrate/20190327205540_add_slug_to_posts.rb
+db/migrate/20190327205923_create_friendly_id_slugs.rb
+config/credentials.yml.enc

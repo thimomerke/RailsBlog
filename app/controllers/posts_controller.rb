@@ -18,7 +18,10 @@ class PostsController < ApplicationController
     end
 
     def show
-    end
+		  if request.path != post_path(@post)
+		  	redirect_to @post, status: :moved_permanently
+	  	end
+  	end
 
     def new
         @post = Post.new
@@ -41,7 +44,7 @@ class PostsController < ApplicationController
         if @post.update(post_params)
             redirect_to @post, notice: "Update successful"
         else
-            render ‘edit’
+            render 'edit'
         end
     end
 
@@ -56,19 +59,19 @@ class PostsController < ApplicationController
 
 private
     def post_params
-        params.require(:post).permit(:title, :author, :content, :category_id, :image)
-    end
+		params.require(:post).permit(:title, :author, :content, :category_id, :image, :slug)
+	end
 
     def find_post
-        @post = Post.find(params[:id])
-    end
+		@post = Post.friendly.find(params[:id])
+	end
 end
 
 protected_methods
     def authenticate
         authenticate_or_request_with_http_basic do |username, password|
-        admin_username= Rails.application.credentials[:admin_username]
-        admin_password= Rails.application.credentials[:admin_password]
+        admin_username= "thimom"
+        admin_password= "Ichinmannheim99!"
 
         session[:admin] = true if (username == admin_username && password == admin_password)
     end

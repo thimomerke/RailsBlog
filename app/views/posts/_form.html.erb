@@ -7,7 +7,7 @@
     <%= f.label :author %><br>
     <%= f.text_field :author, placeholder: "Type the post author here" %><br>
     <%= f.label :content %><br>
-    <%= f.text_area :content, class: 'quill_container', placeholder: "Type the post text here" %><br>
+    <%= f.text_area :content, :class => "tinymce", :rows => 50, :cols => 80, placeholder: "Type the post text here" %><%= tinymce %><br>
     <%= f.label :image %><br>
     <%= f.file_field :image %><br>
 

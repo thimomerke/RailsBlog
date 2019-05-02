@@ -18,3 +18,4 @@
 //= require popper
 //= require bootstrap
 //= require quill.global
+//= require tinymce
